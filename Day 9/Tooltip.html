@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<style>
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    cursor: pointer;
+  }
+
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+
+  img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  #tt2 {
+    margin: 25px;
+
+  }
+</style>
+
+<script>
+  // Initialize tooltips
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+  })
+</script>
+
+<body style="text-align:center;">
+
+  <h2>Basic Tooltip</h2>
+
+  <p>Move the mouse over the text below:</p>
+
+  <div class="tooltip">Hover over me
+    <span class="tooltiptext"><img src="1.jpg" alt="oops"></span>
+  </div>
+ 
+  <br><br><br>
+  <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" title="Hooray!">
+    <img src="2.jpg" alt="" srcset="">
+  </button>
+
+</body>
+
+</html>
