@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JQuary Events</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript">
+        //JQuery makes a use of anonymous functions
+        $(function () {
+            console.log("function");
+        });
+        $(document).ready(function () {
+            //$("div").bind('click', function(){});
+            $("#btnClickEvent").click(function () {
+                // jQuery code goes here
+                $(this).text('Button click');
+            });
+            $("#btnClickEvent").dblclick(function () {
+                $(this).text('Button bouble click');
+            });
+            $("#divMouseLeaveEnter").mouseenter(function () {
+                $(this).text('Cursor is in!');
+            });
+            $("#divMouseLeaveEnter").mouseleave(function () {
+                $(this).text('Curosr is out!');
+            });
+            $("#divMouseUpDown").mousedown(function () {
+                $(this).text('Mouse button is down!');
+            });
+            $("#divMouseUpDown").mouseup(function () {
+                $(this).text('Mouse button is released!');
+            });
+        });
+    </script>
+    <style>
+        div {
+            /* background-color: #f1f1f1; */
+            margin: 20px;
+            padding: 10px;
+            font-size: 18px;
+            width: 100%;
+            text-align: center;
+            cursor: pointer;
+            font-size: 50px;
+
+        }
+        button{
+            font-size: 25px;
+            width: 250px;
+            height: 150px;
+        }
+        .container{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+    <button id="btnClickEvent">Click / Double Click Events</button>
+    <div id="divMouseLeaveEnter"> Enter / Leave Mouse Events</div>
+    <div id="divMouseUpDown"> Up / Down Mouse Events</div>
+</div>
+</body>
+
+</html>
